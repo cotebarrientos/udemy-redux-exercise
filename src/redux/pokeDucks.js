@@ -35,6 +35,14 @@ export default function pokeReducer(state=initialData, action){
 
 export const getPokemonAction = () => async (dispatch, getState) => {
 
+    if(localStorage.getItem('offset=0')){
+        dispatch({
+            type: GET_POKE_SUCCESS,
+            payload: JSON.parse(localStorage.getItem('offset=0'))
+        })
+        return
+    }
+
     try {
 
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`)
@@ -43,6 +51,7 @@ export const getPokemonAction = () => async (dispatch, getState) => {
             type: GET_POKE_SUCCESS,
             payload: res.data
         })
+        localStorage.setItem('offset=0', JSON.stringify(res.data))
 
     } catch (error) {
         console.log(error)
@@ -53,6 +62,14 @@ export const nextPokemonAction = () => async (dispatch, getState) => {
 
     const {next} = getState().myPokemons
 
+    if(localStorage.getItem(next)){
+        dispatch({
+            type: GET_POKE_NEXT_SUCCESS,
+            payload: JSON.parse(localStorage.getItem(next))
+        })
+        return
+    }
+
     try {
 
         const res = await axios.get(next)
@@ -61,6 +78,7 @@ export const nextPokemonAction = () => async (dispatch, getState) => {
             type: GET_POKE_NEXT_SUCCESS,
             payload: res.data
         })
+        localStorage.setItem(next, JSON.stringify(res.data))
 
     } catch (error) {
         console.log(error)
@@ -72,6 +90,14 @@ export const previousPokemonAction = () => async (dispatch, getState) => {
     
     const {previous} = getState().myPokemons
 
+    if(localStorage.getItem(previous)){
+        dispatch({
+            type: GET_POKE_PREVIOUS_SUCCESS,
+            payload: JSON.parse(localStorage.getItem(previous))
+        })
+        return
+    }
+
     try {
         const res = await axios.get(previous)
 
@@ -79,6 +105,7 @@ export const previousPokemonAction = () => async (dispatch, getState) => {
             type: GET_POKE_PREVIOUS_SUCCESS,
             payload: res.data
         })
+        localStorage.setItem(previous, JSON.stringify(res.data))
     } catch (error) {
         console.log(error)
     }
