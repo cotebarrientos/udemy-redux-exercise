@@ -1,6 +1,7 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getPokemonAction} from '../redux/pokeDucks'
+import {nextPokemonAction} from '../redux/pokeDucks'
 
 const Pokemons = () => {
 
@@ -25,6 +26,12 @@ const Pokemons = () => {
             >
                 Get Pokemons
                 <i className="fab fa-get-pocket ms-2"></i>
+            </button>
+            <button 
+                className="btn btn-secondary mt-2 mb-4 text-uppercase ms-2"
+                onClick={() => dispatch(nextPokemonAction(20))}
+            >
+                Next
             </button>
             <ul>
                 {
