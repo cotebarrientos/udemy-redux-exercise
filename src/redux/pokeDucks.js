@@ -3,7 +3,10 @@ import axios from 'axios'
 // Constants
 
 const initialData = {
-    pokeArray : [],
+    count: 0,
+    next: null,
+    previous: null,
+    results: [],
     offset: 0
 }
 
@@ -11,15 +14,18 @@ const initialData = {
 
 const GET_POKE_SUCCESS = 'GET_POKE_SUCCESS'
 const GET_POKE_NEXT_SUCCESS = 'GET_POKE_NEXT_SUCCESS'
+const GET_POKE_PREVIOUS_SUCCESS = 'GET_POKE_PREVIOUS_SUCCESS'
 
 // Reducers
 
 export default function pokeReducer(state=initialData, action){
     switch(action.type){
         case GET_POKE_SUCCESS:
-            return {...state, pokeArray: action.payload}
+            return {...state, ...action.payload}
         case GET_POKE_NEXT_SUCCESS:
-            return {...state, pokeArray: action.payload.pokeArray, offset: action.payload.offset}
+            return {...state, ...action.payload}
+        case GET_POKE_PREVIOUS_SUCCESS:
+            return {...state, ...action.payload}
         default:
             return state
     }
@@ -29,16 +35,13 @@ export default function pokeReducer(state=initialData, action){
 
 export const getPokemonAction = () => async (dispatch, getState) => {
 
-    // const offset = getState().myPokemons.offset
-    const {offset} = getState().myPokemons
-
     try {
 
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`)
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`)
 
         dispatch({
             type: GET_POKE_SUCCESS,
-            payload: res.data.results
+            payload: res.data
         })
 
     } catch (error) {
@@ -46,25 +49,37 @@ export const getPokemonAction = () => async (dispatch, getState) => {
     }
 }
 
-export const nextPokemonAction = (number) => async (dispatch, getState) => {
+export const nextPokemonAction = () => async (dispatch, getState) => {
 
-    const {offset} = getState().myPokemons
-    const next = offset + number
+    const {next} = getState().myPokemons
 
     try {
 
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${next}&limit=20`)
+        const res = await axios.get(next)
 
         dispatch({
             type: GET_POKE_NEXT_SUCCESS,
-            payload: {
-                pokeArray: res.data.results,
-                offset: next
-            }
+            payload: res.data
         })
 
     } catch (error) {
         console.log(error)
     }
 
+}
+
+export const previousPokemonAction = () => async (dispatch, getState) => {
+    
+    const {previous} = getState().myPokemons
+
+    try {
+        const res = await axios.get(previous)
+
+        dispatch({
+            type: GET_POKE_PREVIOUS_SUCCESS,
+            payload: res.data
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }
