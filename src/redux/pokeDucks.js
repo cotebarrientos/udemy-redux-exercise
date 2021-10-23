@@ -15,6 +15,7 @@ const initialData = {
 const GET_POKE_SUCCESS = 'GET_POKE_SUCCESS'
 const GET_POKE_NEXT_SUCCESS = 'GET_POKE_NEXT_SUCCESS'
 const GET_POKE_PREVIOUS_SUCCESS = 'GET_POKE_PREVIOUS_SUCCESS'
+const GET_POKE_INFO_SUCCESS = 'GET_POKE_INFO_SUCCESS'
 
 // Reducers
 
@@ -26,6 +27,8 @@ export default function pokeReducer(state=initialData, action){
             return {...state, ...action.payload}
         case GET_POKE_PREVIOUS_SUCCESS:
             return {...state, ...action.payload}
+        case GET_POKE_INFO_SUCCESS:
+            return {...state, onePokemon: action.payload}
         default:
             return state
     }
@@ -33,7 +36,39 @@ export default function pokeReducer(state=initialData, action){
 
 // Actions
 
-export const getPokemonAction = () => async (dispatch, getState) => {
+export const myPokeDetailAction = (url) => async (dispatch, getState) => {
+
+    if(url === undefined){
+        url = 'https://pokeapi.co/api/v2/pokemon/1/'
+    }
+
+    try {
+
+        const res = await axios.get(url)
+        console.log(res.data)
+        dispatch({
+            type: GET_POKE_INFO_SUCCESS,
+            payload: {
+                name: res.data.name,
+                weight: res.data.weight,
+                height: res.data.height,
+                image: res.data.sprites.front_default,
+                type: res.data.types[0].type.name,
+                ability1: res.data.abilities[0].ability.name,
+                ability2: res.data.abilities[1].ability.name,
+                base_experience: res.data.base_experience,
+                poke_number: res.data.id
+
+            }
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+export const getPokemonAction = () => async (dispatch) => {
 
     if(localStorage.getItem('offset=0')){
         dispatch({

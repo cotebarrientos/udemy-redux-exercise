@@ -1,6 +1,11 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getPokemonAction, nextPokemonAction, previousPokemonAction} from '../redux/pokeDucks'
+import {
+    getPokemonAction, 
+    nextPokemonAction, 
+    previousPokemonAction,
+    myPokeDetailAction} from '../redux/pokeDucks'
+import PokeDetail from './PokeDetail'
 
 
 const Pokemons = () => {
@@ -84,6 +89,7 @@ const Pokemons = () => {
                                 {item.name}
                                 <button 
                                 className="btn btn-sm btn-dark float-end text-uppercase"
+                                onClick={() => dispatch(myPokeDetailAction(item.url))}
                                 >
                                     Info
                                     <i className="fas fa-info-circle ms-2"></i>
@@ -102,6 +108,7 @@ const Pokemons = () => {
                     />
                     </h3>
                     <hr />
+                    <PokeDetail />
                 </div>
             </div>
         </>
