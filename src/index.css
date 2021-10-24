@@ -15,7 +15,7 @@ body {
 }
 
 .my-pokemon-list-img {
-  width: 50px;
+  width: 100px;
   height: auto;
 }
 
@@ -33,9 +33,10 @@ body {
 }
 
 .app-welcoming-box {
-  background-color: #212529;
+  background-color: #fafafa;
   min-height: 150px;
   padding: 20px;
+  border: 4px dotted #212529;
 }
 
 .selected-poke-img {

@@ -17,6 +17,10 @@ const Pokemons = () => {
     const previous = useSelector(store => store.myPokemons.previous)
 
     useEffect(() => {
+        document.title = 'MyPokeApp'
+    }, [])
+
+    useEffect(() => {
 
         const fetchData = () => {
             dispatch(getPokemonAction())
@@ -26,20 +30,19 @@ const Pokemons = () => {
 
     return (
         <>
-            <div className="app-welcoming-box shadow p-3 mb-4 rounded">
-                <h1 className="mt-3 font-roboto text-uppercase text-center text-light title-size-1">Welcome to </h1>
+            <div className="app-welcoming-box shadow p-3 mb-4 rounded col-md-6 col-12 mx-auto">
+                <h1 className="mt-3 font-roboto text-uppercase text-center text-dark title-size-1">Welcome to </h1>
                 <h1 className="pb-3 mt-1 font-oswald text-uppercase text-center">
                     <span className="text-danger">My</span>
                     <span className="text-warning">Poke</span>
-                    <span className="text-light">App</span>
-                    <span className="ms-2">
-                        <img 
-                        src="https://cdn3.iconfinder.com/data/icons/pokemon-go-3/512/pokemon_go_play_game_charcter-256.png" 
-                        alt="my pokemons"
-                        className="my-pokemon-list-img" />
-                    </span>
+                    <span className="text-dark">App</span>
                 </h1>
+                <img 
+                    src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Pokemon_Location-256.png" 
+                    alt="my pokemons"
+                    className="my-pokemon-list-img img-fluid d-block mx-auto" />
             </div>
+            <hr />
 
             <div className="row pb-5">
                 <div className="col-md-6 col-xs-12">
