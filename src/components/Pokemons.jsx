@@ -24,6 +24,10 @@ const Pokemons = () => {
         fetchData()
     }, [dispatch])
 
+    useEffect(() => {
+        document.title = 'MyPokeApp'
+    }, [])
+
     return (
         <>
             <div className="app-welcoming-box shadow p-3 mb-4 rounded col-md-6 col-12 mx-auto">

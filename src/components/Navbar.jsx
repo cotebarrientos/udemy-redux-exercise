@@ -46,7 +46,6 @@ const Navbar = (props) => {
                     <li className="nav-item">
                         <NavLink 
                             className="nav-link me-3 ms-3" 
-                            onClick={() => signOut()}
                             to="/login"
                         >
                             Login
@@ -57,6 +56,7 @@ const Navbar = (props) => {
                     <li className="nav-item">
                         <NavLink
                             className="nav-link me-3 ms-3"
+                            onClick={() => signOut()}
                             to="/login"
                         >
                             Logout

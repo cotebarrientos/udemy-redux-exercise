@@ -7,25 +7,59 @@ import Navbar from './components/Navbar'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom"
 
-
+// Firebase
+import {auth} from './firebase'
 
 function App() {
 
-  return (
+  // Firebase
+  const [firebaseUser, setFirebaseUser] = React.useState(false)
+
+  React.useEffect(() => {
+    const fetchUser = () => {
+      auth.onAuthStateChanged(user => {
+          console.log(user)
+          if(user){
+              setFirebaseUser(user)
+          }else{
+              setFirebaseUser(null)
+          }
+      })
+    } 
+    fetchUser()
+  }, [])
+
+  const PrivateRoute = ({component, path, ...rest}) => {
+    if(localStorage.getItem('user')){
+      const userStorage = JSON.parse(localStorage.getItem('user'))
+      if(userStorage.uid === firebaseUser.uid){
+        console.log('are the same')
+        return <Route component={component} path={path} {...rest} />
+      }else{
+        console.log("it doesn't exist")
+        return <Redirect to="/login" {...rest} />
+      }
+    }else{
+      return <Redirect to="/login" {...rest} />
+    }
+  }
+
+  return firebaseUser !== false ? (
 
     <Router>
       <div className="container">
         <Navbar />
         <Switch>
-          <Route component={Pokemons} path="/" exact/>
+          <PrivateRoute component={Pokemons} path="/" exact/>
           <Route component={Login} path="/login" exact/>
         </Switch>
       </div>
     </Router>
-  );
+  ): (<div>loading...</div>)
 }
 
 export default App;
