@@ -12,6 +12,7 @@ const initialData = {
 const LOADING = 'LOADING'
 const USER_ERROR = 'USER_ERROR'
 const USER_SUCCESS = 'USER_SUCCESS'
+const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
 
 // Reducers
 
@@ -24,6 +25,8 @@ export default function userReducer (state = initialData, action){
             return {...initialData}
         case USER_SUCCESS:
             return {...state, loading: false, user: action.payload, active: true}
+        case LOGOUT_SUCCESS:
+            return {...initialData}
         default: 
             return {...state}
     }
@@ -74,4 +77,12 @@ export const readUserActiveAction = () => async (dispatch) => {
             }
         })
     }
+}
+
+export const logoutUserAction = () => (dispatch) => {
+    auth.signOut()
+    dispatch({
+        type: LOGOUT_SUCCESS
+    })
+    localStorage.removeItem('user')
 }

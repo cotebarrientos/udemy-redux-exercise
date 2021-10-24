@@ -1,7 +1,18 @@
 import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import {Link, NavLink, withRouter} from 'react-router-dom'
 
-const Navbar = () => {
+import { useDispatch } from 'react-redux'
+import {logoutUserAction} from '../redux/userDucks'
+
+const Navbar = (props) => {
+
+    const dispatch = useDispatch()
+
+    const signOut = () => {
+        dispatch(logoutUserAction())
+        props.history.push('/login')
+    }
+
     return (
             
         <nav className="navbar navbar-dark navbar-expand-lg bg-dark mb-4">
@@ -35,6 +46,7 @@ const Navbar = () => {
                     <li className="nav-item">
                         <NavLink 
                             className="nav-link me-3 ms-3" 
+                            onClick={() => signOut()}
                             to="/login"
                         >
                             Login
@@ -59,4 +71,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default withRouter(Navbar)

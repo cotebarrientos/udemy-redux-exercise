@@ -17,10 +17,6 @@ const Login = (props) => {
         }
     }, [active])
 
-    useEffect(() => {
-        document.title = 'MyPokeApp | Login'
-    }, [])
-
     return (
         <div className="mt-5 text-center">
             <h2 className="text-capitalize">Login using a google account</h2>

@@ -17,10 +17,6 @@ const Pokemons = () => {
     const previous = useSelector(store => store.myPokemons.previous)
 
     useEffect(() => {
-        document.title = 'MyPokeApp'
-    }, [])
-
-    useEffect(() => {
 
         const fetchData = () => {
             dispatch(getPokemonAction())
