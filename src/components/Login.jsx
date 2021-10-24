@@ -1,6 +1,21 @@
 import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import {signInUserAction} from '../redux/userDucks'
 
-const Login = () => {
+import {withRouter} from 'react-router-dom'
+
+const Login = (props) => {
+
+    const dispatch = useDispatch()
+    const loading = useSelector(store => store.user.loading)
+    const active = useSelector(store => store.user.active)
+
+    useEffect(() => {
+        console.log(active)
+        if(active){
+            props.history.push('/')
+        }
+    }, [active])
 
     useEffect(() => {
         document.title = 'MyPokeApp | Login'
@@ -26,7 +41,11 @@ const Login = () => {
                     />
                 </div>
             </div>
-            <button className="btn btn-dark btn-lg mt-4">
+            <button 
+                className="btn btn-dark btn-lg mt-4"
+                onClick={() => dispatch(signInUserAction())}
+                disabled={loading}
+            >
                 Login
                 <i className="fab fa-google-plus ms-2"></i>
             </button>
@@ -34,4 +53,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default withRouter(Login)
