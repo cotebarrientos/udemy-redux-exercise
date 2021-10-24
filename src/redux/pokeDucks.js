@@ -100,7 +100,7 @@ export const getPokemonAction = () => async (dispatch) => {
 
     try {
 
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`)
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=15`)
 
         dispatch({
             type: GET_POKE_SUCCESS,
