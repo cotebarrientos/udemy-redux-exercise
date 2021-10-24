@@ -26,8 +26,8 @@ const PokeDetail = () => {
                 <div className="card-title poke-name">{selectedPokemon.name}</div>
                 <p 
                 className="card-text text-center font-roboto mt-4">
-                    <strong className="text-secondary me-2">Weight:</strong>{selectedPokemon.weight} | 
-                    <strong className="text-secondary ms-2 me-2">Height:</strong>{selectedPokemon.height}
+                    <strong className="text-secondary me-2">Weight:</strong>{selectedPokemon.weight} kg | 
+                    <strong className="text-secondary ms-2 me-2">Height:</strong>{selectedPokemon.height} m
                 </p>
                 <hr />
                 <p className="card-text font-roboto text-capitalize">
@@ -38,9 +38,9 @@ const PokeDetail = () => {
                     <strong className="me-2">Type:</strong>
                     {selectedPokemon.type}</p>
                 <hr />
-                <p className="card-text font-roboto text-capitalize">
-                    <strong className="me-2">Base Experience:</strong>
-                    {selectedPokemon.base_experience}</p>
+                <p className="card-text font-roboto">
+                    <strong className="me-2 text-capitalize">Base Experience:</strong>
+                    {selectedPokemon.base_experience} pts</p>
                 <hr />
                 <p className="card-text font-roboto text-capitalize">
                     <strong className="me-2">Abilities:</strong>

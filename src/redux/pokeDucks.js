@@ -41,17 +41,26 @@ export const myPokeDetailAction = (url) => async (dispatch, getState) => {
     if(url === undefined){
         url = 'https://pokeapi.co/api/v2/pokemon/1/'
     }
+    if(localStorage.getItem(url)){
+        dispatch({
+            type: GET_POKE_INFO_SUCCESS,
+            payload: JSON.parse(localStorage.getItem(url))
+        })
+        return
+    }
 
     try {
 
         const res = await axios.get(url)
+        const pokeWeight = res.data.weight / 10
+        const pokeHeight = res.data.height / 10
         console.log(res.data)
         dispatch({
             type: GET_POKE_INFO_SUCCESS,
             payload: {
                 name: res.data.name,
-                weight: res.data.weight,
-                height: res.data.height,
+                weight: pokeWeight,
+                height: pokeHeight,
                 image: res.data.sprites.front_default,
                 type: res.data.types[0].type.name,
                 ability1: res.data.abilities[0].ability.name,
@@ -61,6 +70,17 @@ export const myPokeDetailAction = (url) => async (dispatch, getState) => {
 
             }
         })
+        localStorage.setItem(url, JSON.stringify({
+            name: res.data.name,
+            weight: pokeWeight,
+            height: pokeHeight,
+            image: res.data.sprites.front_default,
+            type: res.data.types[0].type.name,
+            ability1: res.data.abilities[0].ability.name,
+            ability2: res.data.abilities[1].ability.name,
+            base_experience: res.data.base_experience,
+            poke_number: res.data.id
+        }))
 
     } catch (error) {
         console.log(error)
