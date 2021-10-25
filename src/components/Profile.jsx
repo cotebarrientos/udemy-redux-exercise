@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {updateUserAction} from '../redux/userDucks'
+import {updateUserAction, editUserPicAction} from '../redux/userDucks'
 
 const Profile = () => {
 
@@ -11,6 +11,8 @@ const Profile = () => {
     const [displayName, setDisplayName] = useState(myUser.displayName)
     const [editName, setEditName] = useState(false)
 
+    const [error, setError] = useState(false)
+
     const dispatch = useDispatch()
 
     const editNameButton = () => {
@@ -20,6 +22,25 @@ const Profile = () => {
         }
         dispatch(updateUserAction(displayName))
         setEditName(false)
+    }
+
+    const selectThisFile = (e) => {
+        console.log(e.target.files[0])   
+        const image = e.target.files[0]
+
+        if(image === undefined){
+            console.log('no image')
+            return
+        }
+
+        if(image.type === 'image/jpeg' || image.type === 'image/png'){
+            dispatch(editUserPicAction(image))
+            setError(false)
+        }else{
+            console.log('This file is not valid')
+            setError(true)
+            return
+        }
     }
 
     useEffect(() => {
@@ -38,7 +59,7 @@ const Profile = () => {
                 </span>
             </h2>
             <hr />
-            <div className="card col-md-6 col-sm-12 mx-auto text-dark bg-light mt-5">
+            <div className="card col-md-6 col-sm-12 mx-auto text-dark bg-light mt-5 mb-5 pb-4 shadow p-3">
                 <div className="card-body">
                     <img src={myUser.photoURL} alt="my pic" className="img-fluid rounded mt-5 mb-5 profile-pic" />
                     <h4 className="card-title pb-2 font-roboto">Nickname: <span className="text-success">{myUser.displayName}</span></h4>
@@ -51,6 +72,30 @@ const Profile = () => {
                             Edit my user name
                             <i className="fas fa-edit ms-2"></i>
                         </button>
+                        <div className="custom-file">
+                        {
+                            error &&
+                            <div className="alert alert-warning">
+                                You must upload an image with the following formats: "PNG or JPG"
+                            </div>
+                        }
+                            <input 
+                                type="file" 
+                                className="custom-file-input" 
+                                id="validatedCustomFile" 
+                                onChange={e => selectThisFile(e)}
+                                required 
+                                disabled={loading}
+                                style={{display:'none'}}
+                            />
+                            <label 
+                                className={loading ? "btn btn-dark disabled" : "btn btn-dark"}
+                                htmlFor="validatedCustomFile"
+                            >
+                                Edit my pic
+                                <i className="fas fa-user-edit ms-2"></i>
+                            </label>
+                        </div>
                     </div>
                 </div>
 

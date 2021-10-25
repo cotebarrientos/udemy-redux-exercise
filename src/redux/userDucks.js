@@ -1,4 +1,4 @@
-import { auth, firebase,db } from '../firebase'
+import { auth, firebase, db, storage } from '../firebase'
 
 // Constants
 
@@ -129,4 +129,36 @@ export const updateUserAction = (newName) => async (dispatch, getState) => {
         console.log(error)
     }
 
+}
+
+export const editUserPicAction = (newPic) =>  async (dispatch, getState) => {
+    dispatch({
+        type: LOADING
+    })
+
+    const {user} = getState().user
+    
+    try {
+
+        const refImg = storage.ref().child(user.email).child('user pic')
+        await refImg.put(newPic)
+        const urlDownload = await refImg.getDownloadURL()
+
+        await db.collection('users').doc(user.email).update({
+            photoURL: urlDownload
+        })
+
+        const editedUser = {
+            ...user,
+            photoURL: urlDownload
+        }
+        dispatch({
+            type: USER_SUCCESS,
+            payload: editedUser
+        })
+        localStorage.setItem('user', JSON.stringify(editedUser))
+
+    } catch (error) {
+        console.log(error)
+    }
 }
