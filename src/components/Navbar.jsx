@@ -50,6 +50,17 @@ const Navbar = (props) => {
                                 </li>
 
                                 <li className="nav-item">
+                                    <NavLink 
+                                        className="nav-link me-3 ms-3" 
+                                        to="/profile"
+                                        exact
+                                    >
+                                        My Profile
+                                        <i className="far fa-address-card ms-2"></i>
+                                    </NavLink>
+                                </li>
+
+                                <li className="nav-item">
                                     <NavLink
                                         className="nav-link me-3 ms-3"
                                         onClick={() => signOut()}

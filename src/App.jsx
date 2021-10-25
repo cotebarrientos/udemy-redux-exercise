@@ -3,6 +3,7 @@ import React from 'react'
 import Pokemons from './components/Pokemons'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
+import Profile from './components/Profile'
 
 import {
   BrowserRouter as Router,
@@ -13,6 +14,7 @@ import {
 
 // Firebase
 import {auth} from './firebase'
+
 
 function App() {
 
@@ -55,6 +57,7 @@ function App() {
         <Navbar />
         <Switch>
           <PrivateRoute component={Pokemons} path="/" exact/>
+          <PrivateRoute component={Profile} path="/profile" exact/>
           <Route component={Login} path="/login" exact/>
         </Switch>
       </div>

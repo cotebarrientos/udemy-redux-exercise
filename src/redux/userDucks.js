@@ -100,3 +100,33 @@ export const logoutUserAction = () => (dispatch) => {
     })
     localStorage.removeItem('user')
 }
+
+export const updateUserAction = (newName) => async (dispatch, getState) => {
+    dispatch({
+        type: LOADING
+    })
+
+    const {user} = getState().user
+
+    try {
+
+        await db.collection('users').doc(user.email).update({
+            displayName: newName
+        })
+
+        const editedUser = {
+            ...user,
+            displayName: newName
+        }
+
+        dispatch ({
+            type: USER_SUCCESS,
+            payload: user
+        })
+        localStorage.setItem('user', JSON.stringify(editedUser))
+        
+    } catch(error){
+        console.log(error)
+    }
+
+}

@@ -37,7 +37,7 @@ const Login = (props) => {
             </div>
             
             <div className="mt-5 text-center">
-                <h2 className="text-capitalize">Login using a google account</h2>
+                <h2 className="text-capitalize font-roboto">Login using a google account</h2>
                 <hr />
                 <div className="row mt-5">
                     <div className="col-6 mt-5">
