@@ -1,4 +1,4 @@
-import { auth, firebase } from '../firebase'
+import { auth, firebase,db } from '../firebase'
 
 // Constants
 
@@ -45,20 +45,34 @@ export const signInUserAction = () => async (dispatch) => {
 
         const provider = new firebase.auth.GoogleAuthProvider();
         const res = await auth.signInWithPopup(provider)
-        console.log(res)
-        dispatch({
-            type: USER_SUCCESS,
-            payload: {
-                user: {
-                    uid: res.user.uid,
-                    email: res.user.email
-                }
-            }
-        })
-        localStorage.setItem('user', JSON.stringify({
+        
+        console.log(res.user)
+
+        const user = {
             uid: res.user.uid,
-            email: res.user.email
-        }))
+            email: res.user.email,
+            displayName: res.user.displayName,
+            photoURL: res.user.photoURL   
+        }
+
+        const userDB = await db.collection('users').doc(user.email).get()
+        console.log(userDB)
+
+        if(userDB.exists){
+            dispatch({
+                type: USER_SUCCESS,
+                payload: userDB.data()
+            })
+            localStorage.setItem('user', JSON.stringify(userDB.data()))
+
+        }else{
+            await db.collection('users').doc(user.email).set(user)
+            dispatch({
+                type: USER_SUCCESS,
+                payload: user
+            })
+            localStorage.setItem('user', JSON.stringify(user))
+        }
         
     } catch (error) {
         console.log(error)
