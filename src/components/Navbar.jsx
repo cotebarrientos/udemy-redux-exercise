@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, NavLink, withRouter} from 'react-router-dom'
 
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {logoutUserAction} from '../redux/userDucks'
 
 const Navbar = (props) => {
@@ -12,6 +12,8 @@ const Navbar = (props) => {
         dispatch(logoutUserAction())
         props.history.push('/login')
     }
+
+    const active = useSelector(store => store.user.active)
 
     return (
             
@@ -32,38 +34,46 @@ const Navbar = (props) => {
             </button>
             <div className="collapse navbar-collapse me-3" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto text-uppercase">
-                    <li className="nav-item">
-                        <NavLink 
-                            className="nav-link me-3 ms-3" 
-                            to="/"
-                            exact
-                        >
-                            My Pokemon Info
-                            <i className="fas fa-file-alt ms-2"></i>
-                        </NavLink>
-                    </li>
 
-                    <li className="nav-item">
-                        <NavLink 
-                            className="nav-link me-3 ms-3" 
-                            to="/login"
-                        >
-                            Login
-                            <i className="fas fa-user-cog ms-2"></i>
-                        </NavLink>
-                    </li>
+                    {
+                        active ? (
+                            <>
+                                <li className="nav-item">
+                                    <NavLink 
+                                        className="nav-link me-3 ms-3" 
+                                        to="/"
+                                        exact
+                                    >
+                                        My Pokemon Info
+                                        <i className="fas fa-file-alt ms-2"></i>
+                                    </NavLink>
+                                </li>
 
-                    <li className="nav-item">
-                        <NavLink
-                            className="nav-link me-3 ms-3"
-                            onClick={() => signOut()}
-                            to="/login"
-                        >
-                            Logout
-                            <i className="fas fa-sign-out-alt ms-2"></i>
-                        </NavLink>
-                    </li>
-   
+                                <li className="nav-item">
+                                    <NavLink
+                                        className="nav-link me-3 ms-3"
+                                        onClick={() => signOut()}
+                                        to="/login"
+                                    >
+                                        Logout
+                                        <i className="fas fa-sign-out-alt ms-2"></i>
+                                    </NavLink>
+                                </li>
+                            </>
+                        ) : (
+
+                            <li className="nav-item">
+                                <NavLink 
+                                    className="nav-link me-3 ms-3" 
+                                    to="/login"
+                                >
+                                    Login
+                                    <i className="fas fa-user-cog ms-2"></i>
+                                </NavLink>
+                            </li>
+                        )
+                    }
+
                 </ul>
                 
             </div>

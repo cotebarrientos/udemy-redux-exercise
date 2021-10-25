@@ -54,43 +54,8 @@ const Pokemons = () => {
                     />
                     </h3>
                     <hr />
-                    <div className="d-flex justify-content-center">
-                        {
-                            pokemons.length === 0 &&
-                            <button 
-                                className="btn btn-lg btn-success mt-2 mb-4 text-uppercase"
-                                onClick={() => dispatch(getPokemonAction())}
-                            >
-                                Get Pokemons
-                                <i className="fab fa-get-pocket ms-2"></i>
-                            </button>
-                        }
-                            
-                        {
-                            previous && 
-                            <button 
-                                className="btn btn-sm btn-secondary mt-2 mb-4 text-uppercase ms-2"
-                                onClick={() => dispatch(previousPokemonAction())}
-                            >
-                                <i className="fas fa-chevron-circle-left me-2"></i>
-                                Previous
-                            </button>
-
-                        }
-
-                        {
-                            next && 
-                            <button 
-                                className="btn btn-sm btn-dark mt-2 mb-4 text-uppercase ms-2"
-                                onClick={() => dispatch(nextPokemonAction())}
-                            >
-                                Next
-                                <i className="fas fa-chevron-circle-right ms-2"></i>
-                            </button>
-                        }
-                    </div>
                     
-                    <ul className="list-group mt-1 col-md-8 col-xs-10 mx-auto">
+                    <ul className="list-group mt-1 col-md-8 col-xs-10 mx-auto mt-5 ">
                         {
                             pokemons.map(item => (
                             <li 
@@ -109,6 +74,41 @@ const Pokemons = () => {
                             ))
                         }
                     </ul>
+                    <div className="d-flex justify-content-center">
+                        {
+                            pokemons.length === 0 &&
+                            <button 
+                                className="btn btn-lg btn-success mt-4 mb-4 text-uppercase"
+                                onClick={() => dispatch(getPokemonAction())}
+                            >
+                                Get Pokemons
+                                <i className="fab fa-get-pocket ms-2"></i>
+                            </button>
+                        }
+                            
+                        {
+                            previous && 
+                            <button 
+                                className="btn btn-sm btn-secondary mt-4 mb-4 text-uppercase ms-2"
+                                onClick={() => dispatch(previousPokemonAction())}
+                            >
+                                <i className="fas fa-chevron-circle-left me-2"></i>
+                                Previous
+                            </button>
+
+                        }
+
+                        {
+                            next && 
+                            <button 
+                                className="btn btn-sm btn-dark mt-4 mb-4 text-uppercase ms-2"
+                                onClick={() => dispatch(nextPokemonAction())}
+                            >
+                                Next
+                                <i className="fas fa-chevron-circle-right ms-2"></i>
+                            </button>
+                        }
+                    </div>
                 </div>
                 <div className="col-md-6 col-xs-12">
                     <h3 className="text-center font-roboto mt-3">Pokemon Detail
