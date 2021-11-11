@@ -15,7 +15,7 @@ const PokeDetail = () => {
     }, [dispatch])
 
     const selectedPokemon = useSelector(store => store.myPokemons.onePokemon)
-
+    
     return selectedPokemon ? (
         <div className="card mt-5 shadow p-3 mb-4 rounded">
             <div className="card-body">
@@ -42,9 +42,10 @@ const PokeDetail = () => {
                     <strong className="me-2 text-capitalize">Base Experience:</strong>
                     {selectedPokemon.base_experience} pts</p>
                 <hr />
-                <p className="card-text font-roboto text-capitalize">
+                <div className="card-text font-roboto text-capitalize">
                     <strong className="me-2">Abilities:</strong>
-                    {selectedPokemon.ability1} | {selectedPokemon.ability2}</p>
+                    <span className="ms-1">{selectedPokemon.abilities}</span>
+                </div>
             </div>
         </div>
     ) : null

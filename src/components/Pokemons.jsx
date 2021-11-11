@@ -10,6 +10,8 @@ import PokeDetail from './PokeDetail'
 
 const Pokemons = () => {
 
+    const currentUser = useSelector(store => store.user.user)
+
     const dispatch = useDispatch()
 
     const pokemons = useSelector(store => store.myPokemons.results)
@@ -38,9 +40,10 @@ const Pokemons = () => {
                     <span className="text-dark">App</span>
                 </h1>
                 <img 
-                    src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Pokemon_Location-256.png" 
-                    alt="my pokemons"
-                    className="my-pokemon-list-img img-fluid d-block mx-auto" />
+                    src={currentUser.photoURL} 
+                    alt="Current logged user pic"
+                    className="profile-pic img-fluid rounded d-block mx-auto" />
+                <h4 className="font-roboto text-center pt-3 text-success">{currentUser.displayName}</h4>
             </div>
             <hr />
 

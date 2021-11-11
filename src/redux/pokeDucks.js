@@ -53,8 +53,23 @@ export const myPokeDetailAction = (url) => async (dispatch, getState) => {
 
         const res = await axios.get(url)
         const pokeWeight = res.data.weight / 10
-        const pokeHeight = res.data.height / 10
+        const pokeHeight = res.data.height / 10 
+        const getPokeAbilities = res.data.abilities.map( item => item.ability) 
+        const eachPokeAbility = getPokeAbilities.map( item => item.name)
+        
+        if(eachPokeAbility[1]  === undefined){
+                eachPokeAbility[1] = " "
+        } else {
+            eachPokeAbility[1] = " | " + eachPokeAbility[1]
+        }
+
+        const mixAbilities = eachPokeAbility[0] + eachPokeAbility[1]
+        
         console.log(res.data)
+        console.log(getPokeAbilities, 'pokeAbilities')
+        console.log(eachPokeAbility, 'eachpokeAbilities')
+        console.log('#######',mixAbilities)
+        
         dispatch({
             type: GET_POKE_INFO_SUCCESS,
             payload: {
@@ -63,8 +78,7 @@ export const myPokeDetailAction = (url) => async (dispatch, getState) => {
                 height: pokeHeight,
                 image: res.data.sprites.front_default,
                 type: res.data.types[0].type.name,
-                ability1: res.data.abilities[0].ability.name,
-                ability2: res.data.abilities[1].ability.name,
+                abilities: mixAbilities,
                 base_experience: res.data.base_experience,
                 poke_number: res.data.id
 
@@ -76,8 +90,7 @@ export const myPokeDetailAction = (url) => async (dispatch, getState) => {
             height: pokeHeight,
             image: res.data.sprites.front_default,
             type: res.data.types[0].type.name,
-            ability1: res.data.abilities[0].ability.name,
-            ability2: res.data.abilities[1].ability.name,
+            abilities: mixAbilities,
             base_experience: res.data.base_experience,
             poke_number: res.data.id
         }))
