@@ -1,6 +1,6 @@
 # MyPokeApp
 
-MyPokeApp allows you to review information in detail of each pokemon that exists (and there are more than 1000 at the moment), thanks to the fact that this app consults the information directly to the **pokemon API**, so it will always be updated with each of our friends that are coming out (it is very normal that every year we have a new pokemon), *so you can be the best pokemon master, and you will know more about the fantastic world of Pokemon*.
+MyPokeApp allows you to review information in detail of each pokemon that exists (and there are more than 800 at the moment), thanks to the fact that this app consults the information directly to the **pokemon API**, so it will always be updated with each of our friends that are coming out (it is very normal that every year we have a new pokemon), *so you can be the best pokemon master, and you will know more about the fantastic world of Pokemon*.
 
 To access the list with all the pokemon, you just have to log in using a gmail account, and that's it, it's very easy!
 
@@ -67,6 +67,10 @@ For local deployment you must have an IDE, like for example **VS Code**
 ### Code
 Some of the code used was based on the exercise shown in the React specialization course taught in Udemy, the course name is [React JS Desde Cero! Hooks, Redux, Context, Firebase y más!](https://www.udemy.com/course/curso-react-js/)
 
+### Media
+
+All images obtained for this project were consulted from [Iconfinder](https://www.iconfinder.com/).
+
 ### Acknowledgements
 
 I would like to thank the following people who encouraged me to continue specializing in the IT area.
@@ -78,5 +82,6 @@ I would like to thank the following people who encouraged me to continue special
 I also want to thank the [**bluuweb**](https://github.com/bluuweb), founded by *Ignacio Gutiérrez*, for doing the specialization course about React and Redux, which was very practical when teaching and exposing everything. 
 
 ---
+> **Disclaimer:** The content of this mini project is for educational purposes only.
 
 > **Note:** Project in process 

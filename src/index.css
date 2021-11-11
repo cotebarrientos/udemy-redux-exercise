@@ -39,6 +39,19 @@ body {
   border: 4px dotted #212529;
 }
 
+.info-box {
+  background-color: #e8fbff;
+  text-align: justify;
+  min-height: 150px;
+  padding: 20px;
+  border: 4px dotted #050558;
+  margin-bottom: 50px;
+}
+
+.info-box, h4, h6 {
+  color: #050558;
+}
+
 .selected-poke-img {
   width: 150px;
   height: auto;

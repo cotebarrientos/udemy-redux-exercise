@@ -64,6 +64,21 @@ const Login = (props) => {
                     <i className="fab fa-google-plus ms-2"></i>
                 </button>
             </div>
+            <div className="col-md-6 col-12 mx-auto info-box">
+                <h4 className="text-capitalize font-roboto pb-3">
+                    Did you know
+                    <span className="ms-1"><i className="fas fa-question-circle"></i></span>
+                </h4>
+                <h6 className="font-roboto">
+                    Through 2021, the pokemon franchise has more than 800 of our epic little 
+                    friends and the list continues to add up.
+                </h6>
+                <img 
+                    src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Virtual_Reality_Pokemon-256.png" 
+                    alt="Did you know" 
+                    className="img-fluid d-block mx-auto" 
+                />
+            </div>
         </>
     )
 }
