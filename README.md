@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# MyPokeApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MyPokeApp allows you to review information in detail of each pokemon that exists (and there are more than 1000 at the moment), thanks to the fact that this app consults the information directly to the **pokemon API**, so it will always be updated with each of our friends that are coming out (it is very normal that every year we have a new pokemon), *so you can be the best pokemon master, and you will know more about the fantastic world of Pokemon*.
 
-## Available Scripts
+To access the list with all the pokemon, you just have to log in using a gmail account, and that's it, it's very easy!
 
-In the project directory, you can run:
+This mini project is part of the exercises done in the specialization course about **React JS and Redux** taught by [Udemy](https://www.udemy.com/course/curso-react-js/).
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Languages
+- HTML 5
+- CSS 3
+- JavaScript
+- JSX
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Libraries
+- React JS 17.0.2
+- Redux 4.1.1
+- Redux-Thunk 2.3.0
+- React-Redux 7.2.5
+- React-Router-Dom 5.3.0
+- Bootstrap 5
+- Font Awesome 5.15.4
+- Pokemon API
 
-### `npm test`
+### Tools Used
+- Firebase 8.7.1
+- VS Code
+- Git
+- GitHub
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deployment
 
-### `npm run build`
+### Clone Project from GitHub
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**1.** Follow this link to the [Project GitHub repository](https://github.com/cotebarrientos/udemy-redux-exercise).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**2.** Scroll to the top of this repository and click on the "clone or download button".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**3.** Decide whether you want to clone the project using HTTPS or an SSH key and do the following:
+- **HTTPS**: click on the checklist icon to the right of the URL.
+- **SSH key**: first click on 'Use SSH' then click on the same icon as above.
 
-### `npm run eject`
+**4.** Open the 'Terminal'.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**5.** Choose the location for the cloned directory.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**6.** Type `git clone`, and then paste the clone URL.
+- `git clone https://github.com/USERNAME/REPOSITORY`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**7.** Press 'Enter' to create your local clone.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Local Deployment
 
-## Learn More
+For local deployment you must have an IDE, like for example **VS Code**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**1.** After cloning this project, navigate to the correct file location after unpacking the files.
+- `cd <path to folder>`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**2.** Then run the following command in the terminal, in order to run this project locally.
+- `npm start`
 
-### Code Splitting
+**3.** After that, this React project should be running on `http://localhost:3000/` 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Credits
+### Code
+Some of the code used was based on the exercise shown in the React specialization course taught in Udemy, the course name is [React JS Desde Cero! Hooks, Redux, Context, Firebase y más!](https://www.udemy.com/course/curso-react-js/)
 
-### Analyzing the Bundle Size
+### Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I would like to thank the following people who encouraged me to continue specializing in the IT area.
 
-### Making a Progressive Web App
+- My boyfriend.
+- My grandma and my little sister.
+- My friend Sulley.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I also want to thank the [**bluuweb**](https://github.com/bluuweb), founded by *Ignacio Gutiérrez*, for doing the specialization course about React and Redux, which was very practical when teaching and exposing everything. 
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> **Note:** Project in process 
