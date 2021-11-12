@@ -4,6 +4,7 @@ import Pokemons from './components/Pokemons'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
+import Footer from './components/Footer'
 
 import {
   BrowserRouter as Router,
@@ -55,11 +56,14 @@ function App() {
     <Router>
       <div className="container-fluid p-0">
         <Navbar />
-        <Switch>
-          <PrivateRoute component={Pokemons} path="/" exact/>
-          <PrivateRoute component={Profile} path="/profile" exact/>
-          <Route component={Login} path="/login" exact/>
-        </Switch>
+        <main>
+          <Switch>
+            <PrivateRoute component={Pokemons} path="/" exact/>
+            <PrivateRoute component={Profile} path="/profile" exact/>
+            <Route component={Login} path="/login" exact/>
+          </Switch>
+        </main>
+        <Footer />
       </div>
     </Router>
   ): (<div>loading...</div>)

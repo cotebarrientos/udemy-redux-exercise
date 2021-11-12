@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* HTML Tags */
+
 html,body {
   margin:0;
   padding:0;
   overflow-x:hidden;
 }
+
+main {
+  min-height: calc(100vh - 165px);
+}
+
+/* Fonts used */
 
 .font-oswald {
   font-family: 'oswald', sans-serif;
@@ -16,23 +24,24 @@ html,body {
   font-family: 'roboto', sans-serif;
 }
 
-.my-pokemon-list-img {
-  width: 100px;
-  height: auto;
-}
-
 .title-size-1 {
   font-size: 60px;
 }
 
-.poke-img-title {
-  width: 30px;
-  height: auto;  
+/* Text Styles */
+
+.poke-name {
+  font-weight: bold;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .p-list {
   font-size: 20px;
 }
+
+/* Special Boxes */
 
 .app-welcoming-box {
   background-color: #fafafa;
@@ -49,6 +58,18 @@ html,body {
   border: 4px dotted #050558;
   margin-bottom: 50px;
   color: #050558;
+}
+
+/* Images */
+
+.my-pokemon-list-img {
+  width: 100px;
+  height: auto;
+}
+
+.poke-img-title {
+  width: 30px;
+  height: auto;  
 }
 
 .poke-img {
@@ -71,15 +92,14 @@ html,body {
   height: auto;
 }
 
-.poke-name {
-  font-weight: bold;
-  font-size: 25px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .profile-pic {
   width: 200px;
   height: 200px;
   object-fit: cover;
+}
+
+/* Footer */
+
+.myFooter {
+  min-height: 50px;
 }
