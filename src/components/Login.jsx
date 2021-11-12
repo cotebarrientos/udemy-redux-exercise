@@ -4,6 +4,12 @@ import {signInUserAction} from '../redux/userDucks'
 
 import {withRouter} from 'react-router-dom'
 
+import img3 from '../img/img3.png'
+import img7 from '../img/img7.png'
+import img4 from '../img/img4.png'
+import img5 from '../img/img5.png'
+import img6 from '../img/img6.png'
+
 const Login = (props) => {
 
     const dispatch = useDispatch()
@@ -31,7 +37,7 @@ const Login = (props) => {
                     <span className="text-dark">App</span>
                 </h1>
                 <img 
-                    src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Pokemon_Location-256.png" 
+                    src={img6}
                     alt="my pokemons"
                     className="my-pokemon-list-img img-fluid d-block mx-auto" />
             </div>
@@ -42,21 +48,21 @@ const Login = (props) => {
                 <div className="row mt-5">
                     <div className="col-6 mt-5">
                         <img 
-                            src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Pokemon_Trainer_Girl-256.png" 
+                            src={img5} 
                             alt="poke master 1" 
-                            className="img-fluid d-block float-end" 
+                            className="img-fluid d-block float-end poke-img" 
                         />
                     </div>
                     <div className="col-6 mt-5">
                         <img 
-                            src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Pokemon_Trainer_Boy-256.png" 
+                            src={img4}
                             alt="poke master 2" 
-                            className="img-fluid d-block float-start" 
+                            className="img-fluid d-block float-start poke-img" 
                         />
                     </div>
                 </div>
                 <button 
-                    className="btn btn-dark btn-lg mt-4 mb-5"
+                    className="btn btn-dark btn-lg mt-5 mb-5"
                     onClick={() => dispatch(signInUserAction())}
                     disabled={loading}
                 >
@@ -64,7 +70,14 @@ const Login = (props) => {
                     <i className="fab fa-google-plus ms-2"></i>
                 </button>
             </div>
-            <div className="col-md-6 col-12 mx-auto info-box">
+            <div className="col-12 mx-auto">
+                <img 
+                    src={img7}
+                    alt= "Box info"
+                    className="img-fluid d-block mx-auto p-5 poke-img-info-arrow"
+                />
+            </div>
+            <div className="col-md-6 col-12 mx-auto info-box shadow mb-5 rounded ">
                 <h4 className="text-capitalize font-roboto pb-3">
                     Did you know
                     <span className="ms-1"><i className="fas fa-question-circle"></i></span>
@@ -74,9 +87,9 @@ const Login = (props) => {
                     friends and the list continues to add up.
                 </h6>
                 <img 
-                    src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Virtual_Reality_Pokemon-256.png" 
+                    src={img3}
                     alt="Did you know" 
-                    className="img-fluid d-block mx-auto" 
+                    className="img-fluid d-block mx-auto poke-img-info-box" 
                 />
             </div>
         </>

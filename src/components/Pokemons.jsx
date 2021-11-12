@@ -7,6 +7,9 @@ import {
     myPokeDetailAction} from '../redux/pokeDucks'
 import PokeDetail from './PokeDetail'
 
+import img1 from '../img/img1.png'
+import img8 from '../img/img8.png'
+
 
 const Pokemons = () => {
 
@@ -51,14 +54,14 @@ const Pokemons = () => {
                 <div className="col-md-6 col-xs-12">
                     <h3 className="text-center font-roboto mt-3">My Pokemon List
                     <img 
-                        src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Pokeballs-256.png"
+                        src={img8}
                         alt="Pokemon list"
                         className="poke-img-title ms-2"
                     />
                     </h3>
                     <hr />
                     
-                    <ul className="list-group mt-1 col-md-8 col-xs-10 mx-auto mt-5 ">
+                    <ul className="list-group mt-1 col-md-8 col-xs-10 mx-auto mt-5 shadow rounded">
                         {
                             pokemons.map(item => (
                             <li 
@@ -116,7 +119,7 @@ const Pokemons = () => {
                 <div className="col-md-6 col-xs-12">
                     <h3 className="text-center font-roboto mt-3">Pokemon Detail
                     <img 
-                        src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Mobile_Phone-256.png"
+                        src={img1}
                         alt="Pokemon list"
                         className="poke-img-title ms-2"
                     />

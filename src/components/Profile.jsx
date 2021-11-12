@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {updateUserAction, editUserPicAction} from '../redux/userDucks'
 
+import img9 from '../img/img9.png'
+
 const Profile = () => {
 
     const myUser = useSelector(store => store.user.user)
@@ -52,7 +54,7 @@ const Profile = () => {
             <h2 className="text-capitalize font-roboto">My profile
                 <span>
                     <img 
-                        src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_poke_trainer_three_star-256.png" 
+                        src={img9}
                         alt="My profile" 
                         className="poke-img-title ms-2" 
                     />

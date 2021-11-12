@@ -53,7 +53,7 @@ function App() {
   return firebaseUser !== false ? (
 
     <Router>
-      <div className="container">
+      <div className="container-fluid p-0">
         <Navbar />
         <Switch>
           <PrivateRoute component={Pokemons} path="/" exact/>

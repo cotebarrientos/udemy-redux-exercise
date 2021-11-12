@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {
-  margin: 0;
+html,body {
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
 }
 
 .font-oswald {
@@ -46,10 +48,22 @@ body {
   padding: 20px;
   border: 4px dotted #050558;
   margin-bottom: 50px;
+  color: #050558;
 }
 
-.info-box, h4, h6 {
-  color: #050558;
+.poke-img {
+  width: 300px;
+  height: auto;
+}
+
+.poke-img-info-arrow {
+  width: 250px;
+  height: auto;
+}
+
+.poke-img-info-box {
+  width: 200px;
+  height: auto;
 }
 
 .selected-poke-img {

@@ -4,6 +4,8 @@ import {Link, NavLink, withRouter} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {logoutUserAction} from '../redux/userDucks'
 
+import img2 from '../img/img2.png'
+
 const Navbar = (props) => {
 
     const dispatch = useDispatch()
@@ -20,7 +22,7 @@ const Navbar = (props) => {
         <nav className="navbar navbar-dark navbar-expand-lg bg-dark mb-4">
             <Link to="/" className="navbar-brand text-uppercase">
                 <img 
-                src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_pikachu-256.png"
+                src={img2}
                 className="ms-3" 
                 alt="img logo" width="40" height="40"/>
                 <span className="text-danger ms-2">My</span>
