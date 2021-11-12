@@ -46,8 +46,6 @@ export const signInUserAction = () => async (dispatch) => {
         const provider = new firebase.auth.GoogleAuthProvider();
         const res = await auth.signInWithPopup(provider)
         
-        console.log(res.user)
-
         const user = {
             uid: res.user.uid,
             email: res.user.email,
@@ -56,7 +54,6 @@ export const signInUserAction = () => async (dispatch) => {
         }
 
         const userDB = await db.collection('users').doc(user.email).get()
-        console.log(userDB)
 
         if(userDB.exists){
             dispatch({

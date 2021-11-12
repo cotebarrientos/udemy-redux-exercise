@@ -61,7 +61,7 @@ const Profile = () => {
                 </span>
             </h2>
             <hr />
-            <div className="card col-md-6 col-sm-12 mx-auto text-dark bg-light mt-5 mb-5 pb-4 shadow p-3">
+            <div className="card col-md-6 col-11 mx-auto text-dark bg-light mt-5 mb-5 pb-4 shadow p-3">
                 <div className="card-body">
                     <img src={myUser.photoURL} alt="my pic" className="img-fluid rounded mt-5 mb-5 profile-pic" />
                     <h4 className="card-title pb-2 font-roboto">Nickname: <span className="text-success">{myUser.displayName}</span></h4>

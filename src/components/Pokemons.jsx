@@ -35,7 +35,7 @@ const Pokemons = () => {
 
     return (
         <>
-            <div className="app-welcoming-box shadow p-3 mb-4 rounded col-md-6 col-12 mx-auto">
+            <div className="app-welcoming-box shadow p-3 mb-4 rounded col-md-6 col-11 mx-auto">
                 <h1 className="mt-3 font-roboto text-uppercase text-center text-dark title-size-1">Welcome to </h1>
                 <h1 className="pb-3 mt-1 font-oswald text-uppercase text-center">
                     <span className="text-danger">My</span>
@@ -51,7 +51,7 @@ const Pokemons = () => {
             <hr />
 
             <div className="row pb-5">
-                <div className="col-md-6 col-xs-12">
+                <div className="col-md-6 col-11 mx-auto">
                     <h3 className="text-center font-roboto mt-3">My Pokemon List
                     <img 
                         src={img8}
@@ -61,7 +61,7 @@ const Pokemons = () => {
                     </h3>
                     <hr />
                     
-                    <ul className="list-group mt-1 col-md-8 col-xs-10 mx-auto mt-5 shadow rounded">
+                    <ul className="list-group mt-1 col-md-8 mx-auto mt-5 shadow rounded">
                         {
                             pokemons.map(item => (
                             <li 
@@ -116,7 +116,7 @@ const Pokemons = () => {
                         }
                     </div>
                 </div>
-                <div className="col-md-6 col-xs-12">
+                <div className="col-md-6 col-11 mx-auto">
                     <h3 className="text-center font-roboto mt-3">Pokemon Detail
                     <img 
                         src={img1}

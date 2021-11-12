@@ -64,12 +64,7 @@ export const myPokeDetailAction = (url) => async (dispatch, getState) => {
         }
 
         const mixAbilities = eachPokeAbility[0] + eachPokeAbility[1]
-        
-        console.log(res.data)
-        console.log(getPokeAbilities, 'pokeAbilities')
-        console.log(eachPokeAbility, 'eachpokeAbilities')
-        console.log('#######',mixAbilities)
-        
+
         dispatch({
             type: GET_POKE_INFO_SUCCESS,
             payload: {

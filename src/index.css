@@ -103,3 +103,11 @@ main {
 .myFooter {
   min-height: 50px;
 }
+
+/* Media Queries  */
+
+@media (max-width: 400px) {
+  .title-size-1 {
+    font-size: 40px;
+  }
+}

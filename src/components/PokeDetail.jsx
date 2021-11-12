@@ -17,7 +17,7 @@ const PokeDetail = () => {
     const selectedPokemon = useSelector(store => store.myPokemons.onePokemon)
     
     return selectedPokemon ? (
-        <div className="card col-md-10 col-xs-10 mx-auto mt-5 shadow p-3 mb-4 rounded">
+        <div className="card col-md-10 mx-auto mt-5 shadow p-3 mb-4 rounded">
             <div className="card-body">
                 <img 
                 src={selectedPokemon.image} 

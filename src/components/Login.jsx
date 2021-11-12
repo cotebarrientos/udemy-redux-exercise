@@ -29,7 +29,7 @@ const Login = (props) => {
 
     return (
         <>
-            <div className="app-welcoming-box shadow p-3 mb-4 rounded col-md-6 col-12 mx-auto">
+            <div className="app-welcoming-box shadow p-3 mb-4 rounded col-md-6 col-11 mx-auto">
                 <h1 className="mt-3 font-roboto text-uppercase text-center text-dark title-size-1">Welcome to </h1>
                 <h1 className="pb-3 mt-1 font-oswald text-uppercase text-center">
                     <span className="text-danger">My</span>
@@ -77,7 +77,7 @@ const Login = (props) => {
                     className="img-fluid d-block mx-auto p-5 poke-img-info-arrow"
                 />
             </div>
-            <div className="col-md-6 col-12 mx-auto info-box shadow mb-5 rounded ">
+            <div className="col-md-6 col-11 mx-auto info-box shadow mb-5 rounded ">
                 <h4 className="text-capitalize font-roboto pb-3">
                     Did you know
                     <span className="ms-1"><i className="fas fa-question-circle"></i></span>
