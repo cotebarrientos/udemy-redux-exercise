@@ -54,6 +54,7 @@ export const signInUserAction = () => async (dispatch) => {
         }
 
         const userDB = await db.collection('users').doc(user.email).get()
+        console.log('#####', userDB)
 
         if(userDB.exists){
             dispatch({
@@ -79,13 +80,11 @@ export const signInUserAction = () => async (dispatch) => {
     }
 }
 
-export const readUserActiveAction = () => async (dispatch) => {
+export const readUserActiveAction = () => (dispatch) => {
     if(localStorage.getItem('user')){
         dispatch({
             type: USER_SUCCESS,
-            payload: {
-                user: JSON.parse(localStorage.getItem('user'))
-            }
+            payload: JSON.parse(localStorage.getItem('user'))
         })
     }
 }
