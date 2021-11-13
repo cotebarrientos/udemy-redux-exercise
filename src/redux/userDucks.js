@@ -118,7 +118,7 @@ export const updateUserAction = (newName) => async (dispatch, getState) => {
 
         dispatch ({
             type: USER_SUCCESS,
-            payload: user
+            payload: editedUser
         })
         localStorage.setItem('user', JSON.stringify(editedUser))
         

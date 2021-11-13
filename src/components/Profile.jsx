@@ -63,9 +63,19 @@ const Profile = () => {
             <hr />
             <div className="card col-md-6 col-11 mx-auto text-dark bg-light mt-5 mb-5 pb-4 shadow p-3">
                 <div className="card-body">
-                    <img src={myUser.photoURL} alt="my pic" className="img-fluid rounded mt-5 mb-5 profile-pic" />
-                    <h4 className="card-title pb-2 font-roboto">Nickname: <span className="text-success">{myUser.displayName}</span></h4>
-                    <p className="card-text"> <strong>Email:</strong> <span className="text-success">{myUser.email}</span></p>
+                    <img 
+                        src={myUser.photoURL} 
+                        alt="my pic" 
+                        className="img-fluid rounded mt-5 mb-5 profile-pic" 
+                    />
+                    <h4 
+                        className="card-title pb-2 font-roboto">
+                            Nickname: <span className="text-success">{myUser.displayName}</span>
+                    </h4>
+                    <p 
+                        className="card-text"> 
+                            <strong>Email:</strong> <span className="text-success">{myUser.email}</span>
+                    </p>
                     <div>
                         <button 
                             className="btn btn-dark mt-4 mb-4"
@@ -75,12 +85,14 @@ const Profile = () => {
                             <i className="fas fa-edit ms-2"></i>
                         </button>
                         <div className="custom-file">
+
                         {
                             error &&
                             <div className="alert alert-warning">
                                 You must upload an image with the following formats: "PNG or JPG"
                             </div>
                         }
+                        
                             <input 
                                 type="file" 
                                 className="custom-file-input" 
