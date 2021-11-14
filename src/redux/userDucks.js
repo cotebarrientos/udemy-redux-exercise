@@ -54,7 +54,6 @@ export const signInUserAction = () => async (dispatch) => {
         }
 
         const userDB = await db.collection('users').doc(user.email).get()
-        console.log('#####', userDB)
 
         if(userDB.exists){
             dispatch({

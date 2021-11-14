@@ -6,6 +6,24 @@ To access the list with all the pokemon, you just have to log in using a gmail a
 
 This mini project is part of the exercises done in the specialization course about **React JS and Redux** taught by [Udemy](https://www.udemy.com/course/curso-react-js/).
 
+<img src="https://github.com/cotebarrientos/udemy-redux-exercise/blob/main/src/img/img2.png?raw=true" alt="Pikachu"  width="20px" /> **You can visit this mini project by clicking [here](https://my-poke-app.web.app/login)** 
+
+---
+## Contents
+1. [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Libraries](#libraries)
+    - [Tools Used](#tools-used)
+2. [Deployment](#deployment)
+    - [Clone Project from GitHub](#clone-project-from-github)
+    - [Local Deployment](#local-deployment)
+3. [Credits](#credits)
+    - [Code](#code)
+    - [Media](#media)
+    - [Acknowledgements](#acknowledgements)
+
+---
+
 ## Technologies Used
 
 ### Languages
@@ -80,6 +98,8 @@ I would like to thank the following people who encouraged me to continue special
 - My friend Sulley.
 
 I also want to thank the [**bluuweb**](https://github.com/bluuweb), founded by *Ignacio Gutiérrez*, for doing the specialization course about React and Redux, which was very practical when teaching and exposing everything. 
+
+[**Back to top**](#mypokeapp)
 
 ---
 > **Disclaimer:** The content of this mini project is for educational purposes only.

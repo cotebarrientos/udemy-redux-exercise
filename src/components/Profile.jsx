@@ -7,7 +7,6 @@ import img9 from '../img/img9.png'
 const Profile = () => {
 
     const myUser = useSelector(store => store.user.user)
-    console.log(myUser)
     const loading = useSelector(store => store.user.loading)
 
     const [displayName, setDisplayName] = useState(myUser.displayName)
