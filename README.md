@@ -6,7 +6,7 @@ To access the list with all the pokemon, you just have to log in using a gmail a
 
 This mini project is part of the exercises done in the specialization course about **React JS and Redux** taught by [Udemy](https://www.udemy.com/course/curso-react-js/).
 
-<img src="https://github.com/cotebarrientos/udemy-redux-exercise/blob/main/src/img/img2.png?raw=true" alt="Pikachu"  width="20px" /> **You can visit this mini project by clicking [here](https://my-poke-app.web.app/login)** 
+<img src="https://github.com/cotebarrientos/udemy-redux-exercise/blob/main/src/img/img2.png?raw=true" alt="Pikachu"  width="25px" /> **You can visit this mini project by clicking [here](https://my-poke-app.web.app/login)** 
 
 ---
 ## Contents
